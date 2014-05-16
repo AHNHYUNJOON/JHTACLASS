@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>반응형 디자인관련 주요 css 클래스</title>
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+<style>
+	div{border:0px solid red;}
+	[class*="span"]{
+		background-color: gray;
+		text-align: center;
+		margin-top: 10px;
+		
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="span4">
+			<div class="visible-phone">
+				휴대폰에서만 보여짐
+			</div>
+		</div>
+		<div class="span4">
+			<div class="visible-tablet">
+				태블릿에서만 보여짐
+			</div>
+		</div>
+		<div class="span4">
+			<div class="visible-desktop">
+				"데스크탑 화면에서만 보여지는 글!!!"
+			</div>
+		</div><!-- PC에서는 보여지고 모바일에서는 안보여지게 -->
+	</div>
+</div>
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="span4">
+			<div class="hidden-phone">
+				휴대폰에서만 숨김
+			</div>
+		</div>
+		<div class="span4">
+			<div class="hidden-tablet">
+				태블릿에서만 숨김
+			</div>
+		</div>
+		<div class="span4">
+			<div class="hidden-desktop">
+				"데스크탑 화면에서만 숨겨지는 글!!!"
+			</div>
+		</div><!-- PC에서는 보여지고 모바일에서는 안보여지게 -->
+	</div>
+</div>
+</body>
+</html>

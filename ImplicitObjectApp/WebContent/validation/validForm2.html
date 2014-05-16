@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+<title>validForm.html</title>
+<script type="text/javascript" src="check.js"></script>
+<script type="text/javascript">
+	function fnCheckForm(obj){
+		if(isNull(obj.name, "이름을 입력해야 합니다.")){
+			return false;
+		}
+
+
+		if(!isId(obj.id)){
+			alert("ID가 올바르지 않습니다.");
+			return false;
+		}
+
+
+		if(!isEmail(obj.email)){
+			alert("email이 올바르지 않습니다.");
+			return false;
+		}
+		
+		if(!isSame(obj.pw1, obj.pw2)){
+			alert("패스워드가 같지 않습니다.");
+			return false;
+		}
+		if(!isShort(obj.pw1)){
+			alert("PW 를 4자이상 입력해 주세요");
+			return false;
+		}
+		if(!isAlphaNum(obj.pw1)){
+			alert("문자와 숫자를 조합하여주세요");
+			return false;
+		}else
+			document.f.submit();		
+		
+	
+		/*과제
+		1. 패스워드의 길이는 반드시 4글자 이상으로 한다. isShort().
+		2. 패스워드는 반드시 문자와 숫자를 혼용하게 한다.
+			isAlphaNum()
+		*/
+
+		return true;
+	}
+</script>
+</head>
+<body>
+
+
+<form name="f" method="post" action="validForm.jsp" 
+		onsubmit="return fnCheckForm(this);">
+	이름 : <input type="text" name="name" id="name"/><br/><br/>
+	아이디 : <input type="text" name="id" id="id"/><br/><br/>
+	패스워드 : <input type="text" name="pw1" id="pw1"/><br/><br/>
+	패스워드 확인 : <input type="text" name="pw2" id="pw2"/><br/><br/>
+	이메일 : <input type="text" name="email" id="email"/><br/><br/>
+	<input type="submit" value="전송"/>
+</form>
+</body>
+</html>
+
